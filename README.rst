@@ -12,7 +12,7 @@ Bitvavo DCA
 Introduction
 ============
 
-``A Django project that utilizes the Bitvavo API to do DCA (Dollar Cost Average) for you on Bitvavo. ``
+A Django project that utilizes the Bitvavo API to do DCA (Dollar Cost Average) for you on Bitvavo.
 
 
 Documentation
