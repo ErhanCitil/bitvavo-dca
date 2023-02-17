@@ -114,6 +114,7 @@ INSTALLED_APPS = [
     # Project applications.
     "bitvavo_dca.accounts",
     "bitvavo_dca.utils",
+    'bitvavo_dca.dca',
 ]
 
 MIDDLEWARE = [
