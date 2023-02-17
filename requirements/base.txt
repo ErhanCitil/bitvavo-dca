@@ -61,6 +61,8 @@ polib==1.1.1
     # via django-rosetta
 psycopg2==2.9.5
     # via -r requirements/base.in
+python-bitvavo-api==1.2.2
+    # via -r requirements/base.in
 python-decouple==3.7
     # via -r requirements/base.in
 python-dotenv==0.21.1
@@ -74,11 +76,15 @@ qrcode==6.1
 redis==4.5.1
     # via django-redis
 requests==2.28.2
-    # via django-rosetta
+    # via
+    #   django-rosetta
+    #   python-bitvavo-api
 sentry-sdk==1.15.0
     # via -r requirements/base.in
 six==1.16.0
-    # via qrcode
+    # via
+    #   qrcode
+    #   websocket-client
 sqlparse==0.4.3
     # via django
 urllib3==1.26.14
@@ -88,6 +94,8 @@ urllib3==1.26.14
     #   sentry-sdk
 uwsgi==2.0.21
     # via -r requirements/base.in
+websocket-client==0.57.0
+    # via python-bitvavo-api
 wrapt==1.14.1
     # via elastic-apm
 

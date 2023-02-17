@@ -25,3 +25,5 @@ phonenumbers
 uwsgi
 sentry-sdk  # error monitoring
 elastic-apm  # Elastic APM integration
+
+python-bitvavo-api
