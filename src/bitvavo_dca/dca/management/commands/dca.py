@@ -3,6 +3,7 @@ import os
 from dotenv import load_dotenv
 from python_bitvavo_api.bitvavo import Bitvavo
 
+
 class Command(BaseCommand):
     def handle(self, *args, **options):
 
@@ -15,11 +16,15 @@ class Command(BaseCommand):
         bitvavo = Bitvavo({
             'APIKEY': BITVAVO_API_KEY,
             'APISECRET': BITVAVO_API_SECRET,
-})
-        
+        })
+
         balance = bitvavo.balance({'symbol': 'EUR'})
+        btcprice = bitvavo.tickerPrice({'market': 'BTC-EUR'})
 
         if int(balance[0]['available']) >= 25:
-            print("Je hebt genoeg geld om te investeren")
+            if int(btcprice['price']) < 30000:
+                bitvavo.placeOrder('BTC-EUR', 'buy', 'market',{ 'amountQuote': 25 })
+            else:
+                print("Bitcoin is hoger dan het max aantal ingestelde euro's")
         else:
-            print("Je hebt niet genoeg geld om te investeren")
+            print("Je hebt niet genoeg geld")
